@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "modcraft_template:zircon_ore",
+    "modcraft_template:deepslate_zircon_ore",
+    "modcraft_template:zircon_block"
+  ]
+}
