@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures" : {
+    "all": "modcraft_template:block/deepslate_zircon_ore"
+  }
+}

@@ -2,5 +2,9 @@
   "item.modcraft_template.zircon": "Zircon",
   "item.modcraft_template.raw_zircon": "Raw Zircon",
 
+  "block.modcraft_template.zircon_block": "Block of Zircon",
+  "block.modcraft_template.zircon_ore": "Zircon Ore",
+  "block.modcraft_template.deepslate_zircon_ore": "Deepslate Zircon Ore",
+
   "itemGroup.modcraft": "Modcraft"
 }
