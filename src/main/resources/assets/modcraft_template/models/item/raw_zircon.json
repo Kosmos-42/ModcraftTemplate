@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "modcraft_template:item/raw_zircon"
+  }
+}

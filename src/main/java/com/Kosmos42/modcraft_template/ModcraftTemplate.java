@@ -1,5 +1,6 @@
 package com.Kosmos42.modcraft_template;
 
+import com.Kosmos42.modcraft_template.Item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +19,8 @@ public class ModcraftTemplate {
     public ModcraftTemplate() {
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
