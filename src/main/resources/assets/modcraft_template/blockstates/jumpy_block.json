@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "modcraft_template:block/jumpy_block" }
+  }
+}

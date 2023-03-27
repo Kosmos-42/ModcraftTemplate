@@ -3,6 +3,7 @@ package com.Kosmos42.modcraft_template.block;
 import com.Kosmos42.modcraft_template.Item.ModCreativeModeTab;
 import com.Kosmos42.modcraft_template.Item.ModItems;
 import com.Kosmos42.modcraft_template.ModcraftTemplate;
+import com.Kosmos42.modcraft_template.block.custom.JumpyBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,6 +36,9 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.MODRAFT_TAB);
 
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
+            () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODRAFT_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
