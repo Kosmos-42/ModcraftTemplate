@@ -23,14 +23,16 @@ public class JumpyBlock extends Block {
     @Override
     public void stepOn(Level level, BlockPos blockPos, BlockState state, Entity entity) {
         if(entity instanceof LivingEntity livingEntity){
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 20, false, false, false));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 40, 20, false, false, false));
             if(livingEntity instanceof Player player){
-                player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(ModItems.EIGHT_BALL.get()));
+                //player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(ModItems.EIGHT_BALL.get()));
             }
         }
 
         super.stepOn(level, blockPos, state, entity);
     }
+
+
 
     //@Override
     /*public InteractionResult use(BlockState blockState, Level level, BlockPos pos, Player player,

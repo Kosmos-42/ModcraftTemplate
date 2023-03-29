@@ -4,6 +4,7 @@ import com.Kosmos42.modcraft_template.Item.ModCreativeModeTab;
 import com.Kosmos42.modcraft_template.Item.ModItems;
 import com.Kosmos42.modcraft_template.ModcraftTemplate;
 import com.Kosmos42.modcraft_template.block.custom.JumpyBlock;
+import com.Kosmos42.modcraft_template.block.custom.ZirconLampBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -38,8 +39,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODRAFT_TAB);
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODRAFT_TAB);
 
+    public static final RegistryObject<Block> ZIRCON_LAMP = registerBlock("zircon_lamp",
+            () -> new ZirconLampBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(2f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(ZirconLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.MODRAFT_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
