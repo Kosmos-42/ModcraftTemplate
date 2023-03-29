@@ -1,4 +1,4 @@
-package com.Kosmos42.modcraft_template.Item;
+package com.Modcraft.modcraft_template.Item;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;

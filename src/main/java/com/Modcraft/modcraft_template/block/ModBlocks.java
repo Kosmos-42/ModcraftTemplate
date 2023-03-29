@@ -1,10 +1,10 @@
-package com.Kosmos42.modcraft_template.block;
+package com.Modcraft.modcraft_template.block;
 
-import com.Kosmos42.modcraft_template.Item.ModCreativeModeTab;
-import com.Kosmos42.modcraft_template.Item.ModItems;
-import com.Kosmos42.modcraft_template.ModcraftTemplate;
-import com.Kosmos42.modcraft_template.block.custom.JumpyBlock;
-import com.Kosmos42.modcraft_template.block.custom.ZirconLampBlock;
+import com.Modcraft.modcraft_template.Item.ModCreativeModeTab;
+import com.Modcraft.modcraft_template.Item.ModItems;
+import com.Modcraft.modcraft_template.ModcraftTemplate;
+import com.Modcraft.modcraft_template.block.custom.JumpyBlock;
+import com.Modcraft.modcraft_template.block.custom.ZirconLampBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;

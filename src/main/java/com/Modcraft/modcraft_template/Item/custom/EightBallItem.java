@@ -1,4 +1,4 @@
-package com.Kosmos42.modcraft_template.Item.custom;
+package com.Modcraft.modcraft_template.Item.custom;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

@@ -1,0 +1,28 @@
+{
+  "items": [
+
+    {
+      "id": 1,
+      "itemName": "test",
+      "proprietes": [
+        "propriete1", "propriete2"
+      ],
+
+      "textures": ["img/image1"]
+    },
+
+    {
+      "id": 2,
+      "itemName": "test2"
+    }
+
+  ],
+
+  "blocks":[
+    {
+      "id": 1,
+      "blockName": "test"
+    }
+  ]
+
+}

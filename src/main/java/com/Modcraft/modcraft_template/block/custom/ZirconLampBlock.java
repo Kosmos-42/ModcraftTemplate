@@ -1,4 +1,4 @@
-package com.Kosmos42.modcraft_template.block.custom;
+package com.Modcraft.modcraft_template.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
