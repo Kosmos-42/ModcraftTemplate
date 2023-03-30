@@ -1,5 +1,7 @@
 package com.Modcraft.modcraft_template.config;
 
+import com.Modcraft.modcraft_template.config.objects.BlockConfig;
+import com.Modcraft.modcraft_template.config.objects.ItemConfig;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -17,6 +19,12 @@ public class Config {
         return blocks;
     }
 
+
+    public static Config getConfig() {
+        return config;
+    }
+
+    protected static Config config;
     protected List <ItemConfig> items = new ArrayList<>();
     protected List <BlockConfig> blocks = new ArrayList<>();
 
@@ -33,8 +41,8 @@ public class Config {
 
     }
 
-    public static void main(String[] args) throws Exception {
-        String string = "";
+    public static void newConfig() {
+        String json = "";
         try
         {
             // Le fichier d'entrée
@@ -52,9 +60,7 @@ public class Config {
                 sb.append("\n");
             }
             fr.close();
-            System.out.println("Contenu du fichier: ");
-            System.out.println(sb);
-            string = sb.toString();
+            json = sb.toString();
         }
         catch(IOException e)
         {
@@ -64,8 +70,7 @@ public class Config {
 
 
         final Gson gson = new GsonBuilder().create();
-        final Config test = gson.fromJson(string, Config.class);
-        System.out.println("Le test : " + test);
-        System.out.println(test.getItems().get(0).getItemName());
+        gson.fromJson(json, Config.class);
+        Config.config = gson.fromJson(json, Config.class);
     }
 }

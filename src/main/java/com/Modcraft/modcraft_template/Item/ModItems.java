@@ -2,14 +2,23 @@ package com.Modcraft.modcraft_template.Item;
 
 import com.Modcraft.modcraft_template.Item.custom.EightBallItem;
 import com.Modcraft.modcraft_template.ModcraftTemplate;
+import com.Modcraft.modcraft_template.config.Config;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-
 public class ModItems {
+
+
+    public static void main(String[] args) {
+        Config.newConfig();
+        System.out.println(Config.getConfig().toString());
+    }
+
+
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ModcraftTemplate.MOD_ID);
 
@@ -22,6 +31,7 @@ public class ModItems {
     public static RegistryObject<Item> EIGHT_BALL = ITEMS.register("eight_ball",
             () -> new EightBallItem(new Item.Properties().tab(ModCreativeModeTab.MODRAFT_TAB)
                     .stacksTo(1)));
+
     public static void register (IEventBus eventBus){
         ITEMS.register(eventBus);
     }

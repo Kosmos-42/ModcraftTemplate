@@ -3,9 +3,12 @@
 
     {
       "id": 1,
-      "itemName": "test",
+      "itemName": "zircon",
+      "DisplayName": "Zircon",
       "proprietes": [
-        "propriete1", "propriete2"
+        {
+          "tab": "Modcraft"
+        }
       ],
 
       "textures": ["img/image1"]
@@ -21,7 +24,7 @@
   "blocks":[
     {
       "id": 1,
-      "blockName": "test"
+      "blockName": "testBlock"
     }
   ]
 

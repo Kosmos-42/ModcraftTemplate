@@ -1,4 +1,4 @@
-package com.Modcraft.modcraft_template.config;
+package com.Modcraft.modcraft_template.config.objects;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,18 @@ public class ItemConfig {
 
     int id;
     String itemName;
-    List<String> proprietes = new ArrayList();
-    List<String> textures = new ArrayList();
+    String displayName;
+    List<ItemProperties> proprietes = new ArrayList<>();
+    List<String> textures = new ArrayList<>();
+    ItemConfig(int id, String itemName, String displayName){
+        this.id = id;
+        this.itemName = itemName;
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
 
     public int getId() {
         return id;
@@ -19,19 +29,15 @@ public class ItemConfig {
         return itemName;
     }
 
-    public List<String> getProprietes() {
+    public List<ItemProperties> getProprietes() {
         return proprietes;
     }
 
     public List<String> getTextures() {
         return textures;
     }
-    ItemConfig(int id, String itemName){
-        this.id = id;
-        this.itemName = itemName;
-    }
 
-    public void ajouterPropriete(String propriete) {
+    public void ajouterPropriete(ItemProperties propriete) {
         this.proprietes.add(propriete);
     }
     public void ajouterTexture(String texture) {

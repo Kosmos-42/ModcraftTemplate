@@ -1,4 +1,4 @@
-package com.Modcraft.modcraft_template.config;
+package com.Modcraft.modcraft_template.config.objects;
 
 public class BlockConfig {
 
@@ -12,7 +12,7 @@ public class BlockConfig {
 
     @Override
     public String toString() {
-        return "Item "+id+ " {" + "blockName='"+this.blockName
+        return "Block "+id+ " {" + "blockName='"+this.blockName
                 +"'}";
     }
 }
