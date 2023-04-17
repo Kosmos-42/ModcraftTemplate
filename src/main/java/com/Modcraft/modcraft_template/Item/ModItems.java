@@ -1,11 +1,14 @@
 package com.Modcraft.modcraft_template.Item;
 
+import com.Modcraft.modcraft_template.Item.custom.EightBallItem;
 import com.Modcraft.modcraft_template.ModcraftTemplate;
+import com.Modcraft.modcraft_template.block.custom.ZirconLampBlock;
 import com.Modcraft.modcraft_template.config.Config;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
 
@@ -26,6 +29,8 @@ public class ModItems {
         }
     }
 
+
+
 //    public static RegistryObject<Item> ZIRCON = ITEMS.register("zircon", //ce nom doit etre le nom du fichier
 //            // resources->assets->...->models->item->zircon.json ainsi que dans le fichier lang : "item.<modName>.zircon"
 //            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODRAFT_TAB)));
@@ -38,6 +43,8 @@ public class ModItems {
 
     public static void register (IEventBus eventBus){
         registerItems();
+//        REGISTERED_ITEMS[0] = ITEMS.register(CONF.getItems().get(0).getItemName(),
+//                () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODRAFT_TAB)));
         ITEMS.register(eventBus);
     }
 }

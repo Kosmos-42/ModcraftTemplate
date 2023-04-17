@@ -2,7 +2,6 @@ package com.Modcraft.modcraft_template;
 
 import com.Modcraft.modcraft_template.Item.ModItems;
 import com.Modcraft.modcraft_template.block.ModBlocks;
-import com.Modcraft.modcraft_template.config.Config;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +15,7 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ModcraftTemplate.MOD_ID)
 public class ModcraftTemplate {
+
     public static final String MOD_ID = "modcraft_template";
     private static final Logger LOGGER = LogUtils.getLogger();
 

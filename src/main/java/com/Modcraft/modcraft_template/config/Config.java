@@ -57,7 +57,7 @@ public class Config {
         return "erreur";
     }
     public Config newConfig() {
-        String json = getConfigFileData("src\\main\\java\\com\\Modcraft\\modcraft_template\\config\\configs.json");
+        String json = getConfigFileData("C:\\Users\\comen\\OneDrive\\Bureau\\Programmation\\configs.json");
         final Gson gson = new GsonBuilder().create();
         Config conf = gson.fromJson(json, Config.class);
         return conf;
