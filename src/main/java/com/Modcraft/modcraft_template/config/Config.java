@@ -19,12 +19,6 @@ public class Config {
         return blocks;
     }
 
-
-    public static Config getConfig() {
-        return config;
-    }
-
-    protected static Config config;
     protected List <ItemConfig> items = new ArrayList<>();
     protected List <BlockConfig> blocks = new ArrayList<>();
 
@@ -35,18 +29,11 @@ public class Config {
         this.blocks.add(block);
     }
 
-    @Override
-    public String toString() {
-        return "items = "+this.items+" blocks = "+this.blocks;
 
-    }
-
-    public static void newConfig() {
-        String json = "";
-        try
-        {
+    public String getConfigFileData(String configFile){
+        try {
             // Le fichier d'entrée
-            File file = new File("src\\main\\java\\com\\Modcraft\\modcraft_template\\config\\configs.json");
+            File file = new File(configFile);
             // Créer l'objet File Reader
             FileReader fr = new FileReader(file);
             // Créer l'objet BufferedReader
@@ -60,17 +47,22 @@ public class Config {
                 sb.append("\n");
             }
             fr.close();
-            json = sb.toString();
+
+            return sb.toString();
         }
         catch(IOException e)
         {
             e.printStackTrace();
         }
-
-
-
-        final Gson gson = new GsonBuilder().create();
-        gson.fromJson(json, Config.class);
-        Config.config = gson.fromJson(json, Config.class);
+        return "erreur";
     }
+    public Config newConfig() {
+        String json = getConfigFileData("src\\main\\java\\com\\Modcraft\\modcraft_template\\config\\configs.json");
+        final Gson gson = new GsonBuilder().create();
+        Config conf = gson.fromJson(json, Config.class);
+        return conf;
+    }
+
+
+
 }

@@ -6,15 +6,8 @@ public class ItemProperties {
     }
 
     String tab;
-
     ItemProperties(String tab){
         this.tab = tab;
     }
 
-    @Override
-    public String toString() {
-        return "ItemProperties{" +
-                "tab='" + tab + '\'' +
-                '}';
-    }
 }

@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "lit=true": { "model": "modcraft_template:block/zircon_lamp_on" },
-    "lit=false": { "model": "modcraft_template:block/zircon_lamp_off" }
-  }
-}
