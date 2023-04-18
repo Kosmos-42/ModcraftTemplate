@@ -1,11 +1,13 @@
 package com.Modcraft.modcraft_template.config;
 
+import com.Modcraft.modcraft_template.ModcraftTemplate;
 import com.Modcraft.modcraft_template.config.objects.BlockConfig;
 import com.Modcraft.modcraft_template.config.objects.ItemConfig;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,40 +31,27 @@ public class Config {
         this.blocks.add(block);
     }
 
-
-    public String getConfigFileData(String configFile){
-        try {
-            // Le fichier d'entrée
-            File file = new File(configFile);
-            // Créer l'objet File Reader
-            FileReader fr = new FileReader(file);
-            // Créer l'objet BufferedReader
-            BufferedReader br = new BufferedReader(fr);
-            StringBuffer sb = new StringBuffer();
-            String line;
-            while((line = br.readLine()) != null)
-            {
-                // ajoute la ligne au buffer
-                sb.append(line);
-                sb.append("\n");
-            }
-            fr.close();
-
-            return sb.toString();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
-        return "erreur";
-    }
     public Config newConfig() {
-        String json = getConfigFileData("C:\\Users\\comen\\OneDrive\\Bureau\\Programmation\\configs.json");
-        final Gson gson = new GsonBuilder().create();
-        Config conf = gson.fromJson(json, Config.class);
+
+        // obtenir la référence de la ressource à partir du classloader
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("configs.json");
+
+        // créer un objet InputStreamReader pour lire le contenu de la ressource
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+
+        // créer un objet Gson pour convertir le contenu en un objet Config
+        Gson gson = new Gson();
+        Config conf = gson.fromJson(inputStreamReader, Config.class);
+
+        // fermer les ressources
+        try {
+            inputStream.close();
+            inputStreamReader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return conf;
+
     }
-
-
 
 }

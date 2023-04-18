@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.io.File;
 
 
 public class ModItems {
@@ -43,8 +44,6 @@ public class ModItems {
 
     public static void register (IEventBus eventBus){
         registerItems();
-//        REGISTERED_ITEMS[0] = ITEMS.register(CONF.getItems().get(0).getItemName(),
-//                () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODRAFT_TAB)));
         ITEMS.register(eventBus);
     }
 }
