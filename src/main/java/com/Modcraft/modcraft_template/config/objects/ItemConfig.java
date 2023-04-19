@@ -1,6 +1,7 @@
 package com.Modcraft.modcraft_template.config.objects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ItemConfig {
@@ -10,15 +11,10 @@ public class ItemConfig {
     String itemName;
     String displayName;
     List<ItemProperties> proprietes = new ArrayList<>();
-    List<String> textures = new ArrayList<>();
     ItemConfig(int id, String itemName, String displayName){
         this.id = id;
         this.itemName = itemName;
         this.displayName = displayName;
-    }
-
-    public String getDisplayName() {
-        return displayName;
     }
 
     public int getId() {
@@ -33,15 +29,9 @@ public class ItemConfig {
         return proprietes;
     }
 
-    public List<String> getTextures() {
-        return textures;
-    }
 
-    public void ajouterPropriete(ItemProperties propriete) {
-        this.proprietes.add(propriete);
-    }
-    public void ajouterTexture(String texture) {
-        this.textures.add(texture);
+    public void setPropriete(List<ItemProperties> proprietes) {
+        this.proprietes = proprietes;
     }
 
     @Override
@@ -49,7 +39,6 @@ public class ItemConfig {
         return "Item "+id+ " {" +
                 "itemName='" + itemName + '\'' +
                 ", proprietes='" + proprietes + '\'' +
-                ", textures='" + textures + '\'' +
                 '}';
     }
 }

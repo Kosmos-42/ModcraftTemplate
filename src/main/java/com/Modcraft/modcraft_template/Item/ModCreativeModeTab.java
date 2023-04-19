@@ -8,7 +8,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab MODRAFT_TAB = new CreativeModeTab("modcraft") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Item.byId(29));
+            return new ItemStack(ModItems.REGISTERED_ITEMS[0].get());
         }
     };
 }

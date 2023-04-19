@@ -3,8 +3,10 @@ package com.Modcraft.modcraft_template.block;
 import com.Modcraft.modcraft_template.Item.ModCreativeModeTab;
 import com.Modcraft.modcraft_template.Item.ModItems;
 import com.Modcraft.modcraft_template.ModcraftTemplate;
-import com.Modcraft.modcraft_template.block.custom.JumpyBlock;
-import com.Modcraft.modcraft_template.block.custom.ZirconLampBlock;
+import com.Modcraft.modcraft_template.config.Config;
+import com.Modcraft.modcraft_template.config.objects.BlockConfig;
+import com.Modcraft.modcraft_template.config.objects.ItemConfig;
+import com.Modcraft.modcraft_template.config.objects.ItemProperties;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,6 +26,18 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ModcraftTemplate.MOD_ID);
+    public static final Config CONF = new Config().newConfig();
+
+    public static final RegistryObject<Block>[] REGISTERED_ITEMS = new RegistryObject[CONF.getItems().size()];
+
+    public static void registerBlocks() {
+        for (int i = 0; i < CONF.getItems().size(); i++) {
+            BlockConfig block = CONF.getBlocks().get(i);
+            //ItemProperties blockProps = item.getProprietes().get(0);
+
+
+        }
+    }
 
 //    public static final RegistryObject<Block> ZIRCON_ORE = registerBlock("zircon_ore",
 //            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)

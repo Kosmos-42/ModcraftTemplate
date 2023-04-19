@@ -3,20 +3,35 @@
 
     {
       "id": 1,
-      "itemName": "test1",
-      "displayName": "Test1",
+      "itemName": "valeurs_de_base",
       "proprietes": [
         {
-          "tab": "Modcraft"
+          "stacksTo" : 64,
+          "durability" : -1
         }
-      ],
-
-      "textures": ["img/image1"]
+      ]
     },
 
     {
       "id": 2,
-      "itemName": "test2"
+      "itemName": "pioche_exemple",
+      "proprietes": [
+        {
+          "stacksTo" : 1,
+          "durability" : 100
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "itemName": "un_exemple",
+      "proprietes": [
+        {
+          "stacksTo": 16,
+          "durability": -1
+        }
+      ]
     }
 
   ],
@@ -24,7 +39,7 @@
   "blocks":[
     {
       "id": 1,
-      "blockName": "testBlock"
+      "blockName": "blocks_valeurs_base"
     }
   ]
 

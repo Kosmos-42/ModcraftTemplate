@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Config {
 
+    public static final Config CONF = new Config().newConfig();
+
     public List<ItemConfig> getItems() {
         return items;
     }
@@ -53,5 +55,11 @@ public class Config {
         return conf;
 
     }
+
+//    public static void main(String[] args) {
+//        Config conf = new Config().newConfig();
+//        System.out.println(conf.items.get(0).getProprietes().get(1).getDurability());
+//
+//    }
 
 }

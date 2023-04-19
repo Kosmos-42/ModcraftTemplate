@@ -1,13 +1,24 @@
 package com.Modcraft.modcraft_template.config.objects;
 
 public class ItemProperties {
-    public String getTab() {
-        return tab;
+
+    int stacksTo = 64;
+    int durability = -1;
+
+    public int getStacksTo() {
+        return stacksTo;
     }
 
-    String tab;
-    ItemProperties(String tab){
-        this.tab = tab;
+    public int getDurability() {
+        return durability;
+    }
+
+    public void setDurability(int durability) {
+        this.durability = durability;
+    }
+
+    public void setStacksTo(int stacksTo) {
+        this.stacksTo = stacksTo;
     }
 
 }
