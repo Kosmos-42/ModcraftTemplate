@@ -29,6 +29,7 @@ public class ModItems {
 
             int durability = itemProps.getDurability();
             Item.Properties itemProperties = new Item.Properties()
+                    //ajouter des propriétés
                     .tab(ModCreativeModeTab.MODRAFT_TAB)
                     .stacksTo(itemProps.getStacksTo());
 

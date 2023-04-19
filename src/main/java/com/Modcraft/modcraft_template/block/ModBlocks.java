@@ -26,15 +26,30 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ModcraftTemplate.MOD_ID);
-    public static final Config CONF = new Config().newConfig();
 
-    public static final RegistryObject<Block>[] REGISTERED_ITEMS = new RegistryObject[CONF.getItems().size()];
+    public static final RegistryObject<Block>[] REGISTERED_ITEMS = new RegistryObject[Config.CONF.getBlocks().size()];
 
     public static void registerBlocks() {
-        for (int i = 0; i < CONF.getItems().size(); i++) {
-            BlockConfig block = CONF.getBlocks().get(i);
-            //ItemProperties blockProps = item.getProprietes().get(0);
+        for (int i = 0; i < Config.CONF.getBlocks().size(); i++) {
+            BlockConfig block = Config.CONF.getBlocks().get(i);
+            String type = block.getType();
 
+            if(type == "minerai"){
+                REGISTERED_ITEMS[i] = registerBlock(block.getBlockName(),
+                        () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                                .strength(block.getStrength()),
+//                                .requiresCorrectToolForDrops(),
+                                //l'Xp qui est droppée
+                                UniformInt.of(block.getMin_exp(), block.getMax_exp())),
+                        ModCreativeModeTab.MODRAFT_TAB);
+            }else{
+                REGISTERED_ITEMS[i] = registerBlock(block.getBlockName(),
+                        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                            // ajouter les paramètres
+                            .strength(block.getStrength())
+//                            .requiresCorrectToolForDrops()
+                        ), ModCreativeModeTab.MODRAFT_TAB);
+            }
 
         }
     }
@@ -71,6 +86,7 @@ public class ModBlocks {
     }
 
     public static void register(IEventBus eventBus){
+        registerBlocks();
         BLOCKS.register(eventBus);
     }
 

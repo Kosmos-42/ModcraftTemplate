@@ -26,6 +26,16 @@ public class Config {
     protected List <ItemConfig> items = new ArrayList<>();
     protected List <BlockConfig> blocks = new ArrayList<>();
 
+    public String getModName() {
+        return modName;
+    }
+
+    public void setModName(String modName) {
+        this.modName = modName;
+    }
+
+    protected String modName;
+
     public void ajouter(ItemConfig item) {
         this.items.add(item);
     }
