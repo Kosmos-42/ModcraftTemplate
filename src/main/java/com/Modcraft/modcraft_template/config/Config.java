@@ -44,7 +44,7 @@ public class Config {
     public Config newConfig() {
 
         // obtenir la référence de la ressource à partir du classloader
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("resources/configs.json");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("configs.json");
 
         // créer un objet InputStreamReader pour lire le contenu de la ressource
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
