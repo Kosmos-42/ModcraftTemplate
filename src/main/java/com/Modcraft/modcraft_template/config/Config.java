@@ -1,10 +1,8 @@
 package com.Modcraft.modcraft_template.config;
 
-import com.Modcraft.modcraft_template.ModcraftTemplate;
 import com.Modcraft.modcraft_template.config.objects.BlockConfig;
 import com.Modcraft.modcraft_template.config.objects.ItemConfig;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -46,7 +44,7 @@ public class Config {
     public Config newConfig() {
 
         // obtenir la référence de la ressource à partir du classloader
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("configs.json");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("resources/configs.json");
 
         // créer un objet InputStreamReader pour lire le contenu de la ressource
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
