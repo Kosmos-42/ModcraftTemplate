@@ -1,0 +1,4 @@
+Décompressez ici l'archive "resources.zip" obtenue sur le site : 
+https://sae.skyhosting.fr/sae/modcraft/
+
+puis déplacez le dossier assets et le fichier configs.json en dehors.
